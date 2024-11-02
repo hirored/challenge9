@@ -14,9 +14,12 @@ class CreateSalesTable extends Migration
     public function up()
     {
         Schema::create('sales', function (Blueprint $table) {
-            $table->id(); // 自動インクリメントのIDカラム
-            $table->unsignedBigInteger('product_id'); // product_idカラム
-            $table->timestamps(); // created_at と updated_at カラム
+            $table->id(); // bigint(20) の ID
+            $table->unsignedBigInteger('product_id');
+            $table->timestamps(); // created_at と updated_at の timestamp
+
+            // 外部キー制約を追加
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 
@@ -30,3 +33,4 @@ class CreateSalesTable extends Migration
         Schema::dropIfExists('sales');
     }
 }
+

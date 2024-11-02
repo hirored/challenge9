@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  /* display: flex; */
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+  padding: 10px;
+  width: 30%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-container select {
+  padding: 10px;
+  width: 20%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.new-register-btn {
+  padding: 10px 20px;
+  background-color: yellow;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.product-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-table th, .product-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.product-table th {
+  background-color: #f2f2f2;
+}
+
+.product-table img {
+  max-width: 100px;
+  height: auto;
+}
+
+.detail-btn, .delete-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.detail-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+

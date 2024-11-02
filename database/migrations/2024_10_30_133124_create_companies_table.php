@@ -14,11 +14,11 @@ class CreateCompaniesTable extends Migration
     public function up()
     {
         Schema::create('companies', function (Blueprint $table) {
-            $table->id();  // id カラム
-            $table->string('company_name');  // 会社名
-            $table->string('street_address');  // 住所
-            $table->string('representative_name');  // 代表者名
-            $table->timestamps();  // created_at および updated_at カラム
+            $table->id(); // bigint(20) の ID
+            $table->string('company_name', 255);
+            $table->string('street_address', 255);
+            $table->string('representative_name', 255);
+            $table->timestamps(); // created_at と updated_at の timestamp
         });
     }
 
@@ -32,3 +32,4 @@ class CreateCompaniesTable extends Migration
         Schema::dropIfExists('companies');
     }
 }
+

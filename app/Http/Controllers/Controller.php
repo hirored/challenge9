@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Article;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Routing\Controller as BaseController;
 
-abstract class Controller
+class Controller extends BaseController
 {
-    public function showList() {
-        // インスタンス生成
-        $model = new Article();
-        $articles = $model->getList();
-
-        return view('list', ['articles' => $articles]);
-    }
+    use AuthorizesRequests, ValidatesRequests;
 }

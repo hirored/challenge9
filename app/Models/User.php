@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'user_name',
         'email',
         'password',
     ];
@@ -46,3 +46,16 @@ class User extends Authenticatable
         ];
     }
 }
+
+// class User extends Authenticatable
+// {
+//     // テーブル名を指定
+//     protected $table = 'user';
+
+//     // 必要なカラムを指定
+//     protected $fillable = [
+//         'user_name',
+//         'email',
+//         'password',
+//     ];
+// }
