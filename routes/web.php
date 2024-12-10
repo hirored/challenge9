@@ -44,15 +44,20 @@ Route::group(['middleware' => 'auth'], function () {
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::resource('products', ProductController::class);
-
-});
 
 
-// 本の登録画面の表示
-Route::get('/create', [CrateProductController::class, 'create'])->name('products_create');
-// 本の登録処理
-Route::post('/store', [EditProductController::class, 'store'])->name('products_edit');
-// 本の詳細
-Route::get('/show/{id}', [ProductShowController::class, 'show'])->name('products_show');
+Route::get('/create', [ProductController::class, 'create'])->name('products.create');
+
+Route::post('/products/store', [App\Http\Controllers\ProductController::class, 'store'])->name('products.store');
+
+
+Route::POST('/products', [App\Http\Controllers\ProductController::class, 'store'])->name('products_store');
+
+
+// Route::get('/show/{id}', [ProductShowController::class, 'show'])->name('products_show');
+
+Route::get('/show',[App\Http\Controllers\ProductController::class, 'show'])->name('products_show');
+
+Route::POST('/update/{product}', [App\Http\Controllers\ProductController::class, 'update'])->name('products.update');
+
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');

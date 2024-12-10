@@ -26,7 +26,9 @@ class Product extends Model
     // Productモデルがsalesテーブルとリレーション関係を結ぶためのメソッドです
     public function sales()
     {
-        return $this->hasMany(Sale::class);
+        // return $this->hasMany(Sale::class);
+
+        return $this->hasMany(Sale::class, 'product_id');
     }
 
     // Productモデルがcompanysテーブルとリレーション関係を結ぶ為のメソッドです
@@ -34,6 +36,9 @@ class Product extends Model
     {
         return $this->belongsTo(Company::class);
     }
+
+
+
 }
 
 

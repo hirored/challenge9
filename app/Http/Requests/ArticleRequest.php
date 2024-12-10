@@ -22,9 +22,38 @@ class ArticleRequest extends FormRequest
     public function rules(): array
     {
         return [
-        'title' => 'required | max:255',
-        'url' => 'required | max:255 | url',
-        'comment' => 'max:10000',
+        'product_name' => ' required |present | max:255',
+        'price' => 'required | present | integer',
+        'stock' => 'required | present | integer',
+        'company_name' => 'required | present | string | max:255',
+        'comment' => 'required | present | string | max:10000',
         ];
     }
+
+    public function attributes()
+{
+    return [
+        'product_name' => '商品名',
+        'price' => '金額' ,'価格',
+        'stock' => '在庫数' ,
+        'company_name' => 'メーカー' ,
+        'comment' => 'コメント',
+    ];
+}
+
+/**
+ * エラーメッセージ
+ *
+ * @return array
+ */
+public function messages() {
+    return [
+        'product_name' => ':商品名を入力してください',
+        'price' => ':金額を入力してください',
+        'stock' => ':在庫数を入力してください',
+        'company_name' => ':attributeは:max字以内で入力してください。',
+        'comment' => ':attributeはURL形式で入力してください。',
+        'comment' => ':attributeは:max字以内で入力してください。',
+    ];
+}
 }

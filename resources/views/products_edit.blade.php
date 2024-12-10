@@ -6,17 +6,18 @@
             <div class="col-md-8">
                 <a href="{{ route('products.index') }}" class="btn btn-primary mt-1 mb-3">商品一覧画面に戻る</a>
                 <div class="card">
-                    <div class="card-header"><h2>商品情報を変更する</h2></div>
+                    <div class="card-header"><h2>商品</h2></div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('products.update', $product) }}" enctype="multipart/form-data">
                             @csrf
-                            @method('PUT')
+                            
 
                             <div class="mb-3">
                                 <label for="product_name" class="form-label">商品名</label>
                                 <input type="text" class="form-control" id="product_name" name="product_name" value="{{ $product->product_name }}" required>
                             </div>
+                            
 
                             <div class="mb-3">
                                 <label for="company_id" class="form-label">メーカー</label>
